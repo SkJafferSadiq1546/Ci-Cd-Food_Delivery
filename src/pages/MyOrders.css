@@ -1,0 +1,130 @@
+.my-orders-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.orders-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.sort-button {
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.order-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ✅ Add this line */
+}
+
+.order-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.track-button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body p {
+    margin: 8px 0;
+}
+
+.items-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.item-detail {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    padding: 5px 0;
+}
+
+.card-footer {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    text-align: right;
+    font-weight: bold;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.status-badge.delivered {
+    background-color: #28a745;
+}
+
+.status-badge.pending {
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* Add these styles to the end of MyOrders.css */
+
+.footer-nav {
+    margin-top: 30px;
+    text-align: bottom;
+}
+
+.back-home-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: bottom;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+    background-color: #0056b3;
+}

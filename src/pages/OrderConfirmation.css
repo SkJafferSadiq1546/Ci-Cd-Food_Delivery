@@ -1,0 +1,40 @@
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.order-details {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    display: inline-block;
+}
+
+.order-details p {
+    margin: 8px 0;
+}
+
+.confirmation-button {
+    padding: 12px 25px;
+    margin-top: 30px; 
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}

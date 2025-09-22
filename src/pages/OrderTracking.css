@@ -1,0 +1,77 @@
+.tracking-page {
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.tracking-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+.tracking-header h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 0;
+}
+.order-details-summary {
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.order-details-summary p {
+    margin: 8px 0;
+}
+.item-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555;
+    padding: 4px 0;
+    margin-left: 20px;
+}
+.tracking-steps {
+    margin-top: 0; /* Fixes the gap */
+}
+.tracking-step {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #888;
+}
+.tracking-step.completed {
+    color: #28a745;
+    font-weight: bold;
+}
+.step-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.tracking-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+}
+.button.green {
+    background-color: #28a745;
+    border-color: #28a745;
+}

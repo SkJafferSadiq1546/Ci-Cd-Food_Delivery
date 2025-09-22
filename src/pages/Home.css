@@ -1,0 +1,551 @@
+/* Layout */
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  position: relative;
+}
+
+/* Overlay when sidebar is open */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 8;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background: #2c2c2c; /* dark gray background */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.08);
+  transition: left 0.28s ease;
+  z-index: 10;
+  padding: 22px;
+  color: #f5f5f5; /* light text for readability */
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar h3 {
+  margin: 0 0 14px;
+  color: #e63900;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background .15s;
+  color: #f5f5f5; /* menu items text */
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: #444; /* hover/active state */
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  margin-left: 0;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Keep toggle above overlay so it can close the menu */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+}
+
+/* Profile icon above overlay too */
+.profile-wrapper {
+  position: relative;
+  z-index: 20;
+}
+
+.profile-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Profile dropdown */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 160px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  z-index: 30;
+  overflow: hidden;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #111;
+  background: white;
+  border: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-link:hover {
+  background: #f6f6f6;
+}
+
+/* Add this to the end of your CSS file to fix the logout button */
+.profile-dropdown .dropdown-link:nth-child(3) {
+  background: white;
+  color: #111;
+}
+
+/* This ensures the hover effect is also consistent */
+.profile-dropdown .dropdown-link:nth-child(3):hover {
+  background: #f6f6f6;
+}
+
+/* Header */
+.header-center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.app-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #e63900;
+}
+
+.search-bar {
+  width: 60%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Card wrapper includes actions below */
+.menu-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Make the clickable area a link that looks like a card */
+.menu-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-card-inner {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.15s;
+  height: 100%;
+  text-align: center;
+}
+
+.menu-card-inner:hover {
+  transform: translateY(-6px);
+}
+
+.menu-card-inner img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.menu-card-inner h3 {
+  margin: 10px 0 4px;
+  font-size: 18px;
+}
+
+.menu-card-inner .price {
+  color: #e63900;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.menu-card-inner .restaurant {
+  font-weight: 600;
+  color: #333;
+}
+
+.menu-card-inner .address {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.menu-card-inner .rating {
+  color: #f39c12;
+}
+
+/* Actions */
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.add-cart-btn {
+  background: #e63900;
+  color: white;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background .15s;
+}
+
+.add-cart-btn:hover {
+  background: #cc2e00;
+}
+
+/* responsive tweaks */
+@media (max-width: 860px) {
+  .search-bar { width: 100%; }
+  .sidebar { width: 200px; left: -220px; }
+  .sidebar.open { left: 0; }
+}
+
+/* === CART PAGE STYLING === */
+.cart-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #e63900;
+}
+
+.empty-cart {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.back-menu-btn {
+  margin-top: 15px;
+  background: #e63900;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.back-menu-btn:hover {
+  background: #cc2e00;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+}
+
+.cart-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-info h3 {
+  margin: 0;
+  color: #333;
+}
+
+.cart-info p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.cart-restaurant {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.remove-btn {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  background: #e60000;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.clear-btn,
+.checkout-btn {
+  margin: 10px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.clear-btn {
+  background: #999;
+  color: #fff;
+}
+.clear-btn:hover {
+  background: #666;
+}
+
+.checkout-btn {
+  background: #28a745;
+  color: #fff;
+}
+.checkout-btn:hover {
+  background: #218838;
+}
+
+/* Cart Section */
+.cart-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+.back-menu-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.cart-restaurant {
+  font-size: 14px;
+  color: gray;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.qty-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #0056b3;
+}
+
+.qty-display {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cart-price {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.remove-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #cc0000;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.clear-btn {
+  margin-right: 10px;
+  padding: 8px 14px;
+  background: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  padding: 8px 14px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkout-btn {
+  padding: 8px 14px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #218838;
+}
+
+/* === NEW STYLING FOR STARTERS === */
+.starters-heading {
+  font-size: 22px;
+  margin: 25px 0 10px;
+  font-weight: bold;
+  color: #e63900;
+  border-bottom: 2px solid #e63900;
+  padding-bottom: 4px;
+}
+
+.starters-heading.veg {
+  color: #28a745;
+  border-color: #28a745;
+}
+
+.starters-heading.nonveg {
+  color: #d9534f;
+  border-color: #d9534f;
+}

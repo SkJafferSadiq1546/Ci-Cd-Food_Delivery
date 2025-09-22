@@ -1,0 +1,100 @@
+/* Main container to center the entire form */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ✅ Ensures it takes full viewport height */
+    background-color: #f0f2f5; /* Light grey background */
+    padding: 20px;
+    box-sizing: border-box; 
+    /* The box-shadow for the card will now appear nicely on this background */
+}
+
+/* The white card/form itself */
+.auth-form {
+    background-color: white;
+    padding: 40px; /* Generous padding inside the card */
+    border-radius: 12px;
+    /* ✅ Refined box-shadow for a softer, more modern look */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+}
+
+.auth-form h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.form-group label {
+    flex: 0 0 100px; 
+    font-weight: bold;
+    color: #555;
+    text-align: right;
+}
+
+.form-group input {
+    flex: 1; 
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+
+.error-message {
+    color: #dc3545;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+}
+
+.auth-switch {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
