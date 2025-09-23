@@ -58,8 +58,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        
-        const response = await axios.get("http://localhost:8080/food-delivery/api/menu-items");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/menu-items`);
         setMenuItems(response.data);
       } catch (error) {
         console.error("Failed to fetch menu items:", error);

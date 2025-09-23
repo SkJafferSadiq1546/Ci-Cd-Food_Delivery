@@ -21,7 +21,8 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
+        <Router basename="/food-delivery">
+          
           <ToastContainer position="top-right" autoClose={3000} />
           <Routes>
             <Route path="/" element={<Splash />} />

@@ -37,7 +37,8 @@ const Cart = () => {
                 <div className="cart-items-list">
                     {cartItems.map((item) => (
                         <div key={item.id} className="cart-item">
-                            <img src={item.image} alt={item.name} className="cart-item-image" />
+                            {/*<img src={item.image} alt={item.name} className="cart-item-image" />*/}
+                            <img src={process.env.PUBLIC_URL + item.image} alt={item.name} className="cart-item-image" />
                             <div className="cart-item-info">
                                 <h3>{item.name}</h3>
                                 <p>{item.restaurant}, {item.address}</p>
