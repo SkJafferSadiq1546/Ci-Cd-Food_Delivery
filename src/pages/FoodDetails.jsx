@@ -13,7 +13,7 @@ const FoodDetails = () => {
         const fetchFoodItem = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:8080/api/menu-items/${id}`);
+                const response = await axios.get(`http://localhost:8080/food-delivery/api/menu-items/${id}`);
                 setFoodItem(response.data);
             } catch (error) {
                 console.error("Failed to fetch food item details:", error);
@@ -47,7 +47,9 @@ const FoodDetails = () => {
     return (
         <div className="food-details-container">
             <div className="food-details-card">
-                <img src={foodItem.image} alt={foodItem.name} className="food-details-img" />
+                {/*<img src={foodItem.image} alt={foodItem.name} className="food-details-img" />*/}
+                <img src={process.env.PUBLIC_URL + foodItem.image} alt={foodItem.name} />
+
                 <h1 className="food-details-name">{foodItem.name}</h1>
                 <p className="food-details-price">Price: ₹{foodItem.price}</p>
                 <p className="food-details-info">Restaurant: {foodItem.restaurant}</p>

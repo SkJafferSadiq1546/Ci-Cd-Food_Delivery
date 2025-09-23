@@ -58,7 +58,8 @@ const Home = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/menu-items");
+        
+        const response = await axios.get("http://localhost:8080/food-delivery/api/menu-items");
         setMenuItems(response.data);
       } catch (error) {
         console.error("Failed to fetch menu items:", error);
@@ -141,7 +142,9 @@ const Home = () => {
                             <div className="menu-card-wrapper" key={item.id}>
                                 <Link to={`/food/${item.id}`} className="menu-card-link">
                                     <div className="menu-card-inner">
-                                        <img src={item.image} alt={item.name} />
+                                        {/*<img src={item.image} alt={item.name} />*/}
+                                        <img src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+
                                         <h3>{item.name}</h3>
                                         <p className="price">₹{item.price}</p>
                                         <p className="restaurant"><strong>{item.restaurant}</strong></p>
@@ -164,7 +167,9 @@ const Home = () => {
                              <div className="menu-card-wrapper" key={item.id}>
                                 <Link to={`/food/${item.id}`} className="menu-card-link">
                                     <div className="menu-card-inner">
-                                        <img src={item.image} alt={item.name} />
+                                        {/*<img src={item.image} alt={item.name} />*/}
+                                        <img src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+
                                         <h3>{item.name}</h3>
                                         <p className="price">₹{item.price}</p>
                                         <p className="restaurant"><strong>{item.restaurant}</strong></p>
@@ -187,7 +192,9 @@ const Home = () => {
                         <div className="menu-card-wrapper" key={item.id}>
                             <Link to={`/food/${item.id}`} className="menu-card-link">
                                 <div className="menu-card-inner">
-                                    <img src={item.image} alt={item.name} />
+                                    {/*<img src={item.image} alt={item.name} />*/}
+                                    <img src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+
                                     <h3>{item.name}</h3>
                                     <p className="price">₹{item.price}</p>
                                     <p className="restaurant"><strong>{item.restaurant}</strong></p>
