@@ -14,8 +14,8 @@ const SignUp = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            // ✅ Send the address along with other user details
-            await axios.post('http://localhost:8080/api/auth/register', {
+            // ✅ Use REACT_APP_API_URL from .env
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
                 name,
                 email,
                 password,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import apiClient from '../api/axiosConfig';
+import apiClient from '../api/apiClient';
 import './SignIn.css';
 
 const SignIn = () => {
